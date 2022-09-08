@@ -1,11 +1,19 @@
 #!/usr/bin/env python3
 
-import aws_cdk as cdk
+from aws_cdk import App, Stack
+from constructs import Construct
 
-from crewtech_api.crewtech_api_stack import CrewtechApiStack
+
+class CrewtechApiStack(Stack):
+
+    def __init__(self, scope: Construct, construct_id: str, **kwargs) -> None:
+        super().__init__(scope, construct_id, **kwargs)
 
 
-app = cdk.App()
-CrewtechApiStack(app, "crewtech-api")
-
+app = App()
+CrewtechApiStack(
+    scope=app,
+    construct_id="CrewtechApiStack",
+    description="CrewTech API Main Stack."
+)
 app.synth()
