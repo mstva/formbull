@@ -21,3 +21,4 @@ venv.bak/
 .cdk.staging/
 cdk.out/
 .idea/
+.DS_Store
